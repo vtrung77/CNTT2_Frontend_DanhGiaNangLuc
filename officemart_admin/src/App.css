@@ -1,6 +1,176 @@
 /* HOAN_THIEN: viết CSS cho bài làm tại đây (hoặc tách thành nhiều tệp CSS nhỏ). */
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-  color: #1f2937;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: #f8fafc;
+  color: #1e293b;
+  overflow-x: hidden;
+}
+
+/* Header */
+.app-header {
+  background-color: #0f172a;
+  color: #ffffff;
+  padding: 14px 20px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.header-inner,
+.app-main {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.app-main {
+  padding: 20px 16px;
+}
+
+/* Page header */
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.page-header h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+/* Buttons */
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px 14px;
+}
+
+.btn-primary {
+  background-color: #2563eb;
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: #1d4ed8;
+}
+
+.action-group {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-edit {
+  background-color: #e2e8f0;
+  color: #0f172a;
+  padding: 6px 10px;
+}
+
+.btn-delete {
+  background-color: #fee2e2;
+  color: #dc2626;
+  padding: 6px 10px;
+}
+
+/* Table Desktop */
+.product-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.product-table th,
+.product-table td {
+  padding: 12px 14px;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+  font-size: 14px;
+}
+
+.product-table th {
+  background-color: #f1f5f9;
+  font-weight: 600;
+  color: #475569;
+}
+
+/* Badges & Stock */
+.status-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.status-active {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+.status-inactive {
+  background-color: #e2e8f0;
+  color: #475569;
+}
+
+.stock-empty {
+  color: #dc2626;
+  font-weight: 600;
+}
+
+/* Responsive Mobile (< 768px) */
+@media (max-width: 767px) {
+
+  .product-table,
+  .product-table thead,
+  .product-table tbody,
+  .product-table tr,
+  .product-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .product-table {
+    background: transparent;
+    border: none;
+  }
+
+  .product-table thead {
+    display: none;
+  }
+
+  .product-table tr {
+    background-color: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 12px;
+  }
+
+  .product-table td {
+    padding: 6px 0;
+    border-bottom: 1px dashed #e2e8f0;
+    word-break: break-word;
+  }
+
+  .product-table td:last-child {
+    border-bottom: none;
+    padding-top: 10px;
+  }
+
+  .product-table td::before {
+    content: attr(data-label) ": ";
+    font-weight: 600;
+    color: #64748b;
+  }
 }
