@@ -1,4 +1,4 @@
-export default function ProductRow({ product, categoryName }) {
+export default function ProductRow({ product, categoryName, onEdit, onDelete }) {
     const formattedPrice =
         new Intl.NumberFormat('vi-VN').format(product.price) + ' ₫';
 
@@ -27,10 +27,20 @@ export default function ProductRow({ product, categoryName }) {
             </td>
             <td data-label="Thao tác">
                 <div className="action-group">
-                    <button type="button" data-testid="edit-button" className="btn-edit">
+                    <button
+                        type="button"
+                        data-testid="edit-button"
+                        className="btn-edit"
+                        onClick={() => onEdit(product.id)}
+                    >
                         Sửa
                     </button>
-                    <button type="button" data-testid="delete-button" className="btn-delete">
+                    <button
+                        type="button"
+                        data-testid="delete-button"
+                        className="btn-delete"
+                        onClick={() => onDelete(product)}
+                    >
                         Xoá
                     </button>
                 </div>

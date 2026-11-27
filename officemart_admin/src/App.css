@@ -63,6 +63,12 @@ button {
   background-color: #1d4ed8;
 }
 
+.btn-primary:disabled,
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
 .action-group {
   display: flex;
   gap: 8px;
@@ -126,6 +132,99 @@ button {
 .stock-empty {
   color: #dc2626;
   font-weight: 600;
+}
+
+/* Form Thêm/Sửa (Áp dụng cho cả Desktop & Mobile) */
+.product-form {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 20px;
+  max-width: 540px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.form-group input,
+.form-group select {
+  padding: 9px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.field-error {
+  color: #dc2626;
+  font-size: 13px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+/* Loading, Error, Empty, Toast */
+.error-box,
+.empty-box {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.error-box [data-testid="error-message"] {
+  color: #dc2626;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.toast-banner {
+  background-color: #166534;
+  color: #ffffff;
+  padding: 10px 16px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+
+/* Modal xác nhận xoá */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(15, 23, 42, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  z-index: 50;
+}
+
+.confirm-dialog {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.confirm-dialog h3 {
+  margin-top: 0;
 }
 
 /* Responsive Mobile (< 768px) */
